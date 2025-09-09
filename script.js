@@ -96,15 +96,16 @@ async function loadTreeDetail(id) {
         document.getElementById("modalDesc").innerHTML = `
       <img src="${plant.image}" alt="${plant.name}" class="w-full h-40 object-cover rounded mb-3"/>
       <p>${plant.description || "No details available."}</p>
-      <p class="mt-2 font-semibold text-green-600">Category: ${plant.category || "Unknown"}</p>
+      <div class= "flex justify-between item-center"><p class="mt-2 font-semibold text-green-600">Category: ${plant.category || "Unknown"}</p>
       <p class="font-bold text-lg">৳${plant.price || "N/A"}</p>
+      </div>
     `;
         document.getElementById("treemodal").classList.remove("hidden");
 
     } catch (error) {
         console.error("Error fetching details:", error);
         document.getElementById("modalDesc").innerText = "Failed to load tree details.";
-        document.getElementById("treeModal").classList.remove("hidden");
+        document.getElementById("treemodal").classList.remove("hidden");
     }
 }
 
