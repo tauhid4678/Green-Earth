@@ -21,7 +21,7 @@ async function loadCategories() {
 function refreshCategories(categories) {
     const allBtn = document.createElement("button");
     allBtn.innerText = "All Trees";
-    allBtn.className = "text-left px-3 py-2 rounded bg-green-600 text-white";
+    allBtn.className = "text-left px-3 py-2 rounded bg-green-600 text-white hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 cursor-pointer";
     allBtn.addEventListener("click", () => {
         setActiveCategory("all", allBtn);
         loadTrees();
@@ -30,7 +30,7 @@ function refreshCategories(categories) {
     categories.forEach(cat => {
         const btn = document.createElement("button");
         btn.innerText = cat.category_name;
-        btn.className = "text-left px-3 py-2 rounded hover:bg-green-200";
+        btn.className = "text-left px-3 py-2 rounded hover:bg-green-200 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 cursor-pointer";
         btn.addEventListener("click", () => {
             setActiveCategory(cat.id, btn);
             loadTrees(cat.id);
@@ -66,7 +66,7 @@ function refreshTrees(plants) {
     treelist.innerHTML = "";
     plants.forEach(tree => {
         const card = document.createElement("div");
-        card.className = "bg-white p-4 rounded-xl shadow flex flex-col justify-between";
+        card.className = "bg-white p-4 rounded-xl shadow flex flex-col justify-between hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 cursor-pointer";
         card.innerHTML = `
           <div>
             <img src="${tree.image}" alt="${tree.name}" class="h-24 w-full object-cover rounded mb-2">
